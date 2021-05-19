@@ -1,0 +1,7 @@
+StandardScaler      = StandardScaler removes the mean and scales the data to unit variance.
+MinMaxScaler        = MinMaxScaler rescales the data set such that all feature values are in the range [0, 1]
+MaxAbsScaler        = MaxAbsScaler is similar to MinMaxScaler except that the values are mapped in the range [0, 1].
+RobustScaler        = The centering and scaling statistics of RobustScaler is based on percentiles and are therefore not influenced by a few number of very large marginal outliers.
+PowerTransformer    = PowerTransformer applies a power transformation to each feature to make the data more Gaussian-like in order to stabilize variance and minimize skewness. Currently the Yeo-Johnson and Box-Cox transforms are supported and the optimal scaling factor is determined via maximum likelihood estimation in both methods.
+QuantileTransformer = QuantileTransformer applies a non-linear transformation such that the probability density function of each feature will be mapped to a uniform or Gaussian distribution.
+Normalizer          = The Normalizer rescales the vector for each sample to have unit norm, independently of the distribution of the samples.

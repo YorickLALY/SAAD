@@ -1,0 +1,414 @@
+% Vorlage für eine Bachelorarbeit
+% Siehe auch LaTeX-Kurs von Mathematik-Online
+% www.mathematik-online.org/kurse
+% Anpassungen für die Fakultät für Mathematik
+% am KIT durch Klaus Spitzmüller und Roland Schnaubelt im Dezember 2011
+
+\documentclass[12pt,a4paper]{scrartcl}
+% scrartcl ist eine abgeleitete Artikel-Klasse im Koma-Skript
+% zur Kontrolle des Umbruchs Klassenoption draft verwenden
+
+
+% die folgenden Packete erlauben den Gebrauch von Umlauten und ß
+% in der Latex Datei
+\usepackage[utf8]{inputenc}
+% \usepackage[latin1]{inputenc} %  Alternativ unter Windows
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+
+\usepackage[pdftex]{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb,amsthm}
+
+
+% Abstand obere Blattkante zur Kopfzeile ist 2.54cm - 15mm
+\setlength{\topmargin}{-15mm}
+
+
+% Umgebungen für Definitionen, Sätze, usw.
+% Es werden Sätze, Definitionen etc innerhalb einer Section mit
+% 1.1, 1.2 etc durchnummeriert, ebenso die Gleichungen mit (1.1), (1.2) ..
+
+\newtheorem{Satz}{Satz}[section]
+\newtheorem{Definition}[Satz]{Definition}     
+\newtheorem{Lemma}[Satz]{Lemma}	
+                  
+\numberwithin{equation}{section} 
+
+% einige Abkuerzungen
+\newcommand{\C}{\mathbb{C}} % komplexe
+\newcommand{\K}{\mathbb{K}} % komplexe
+\newcommand{\R}{\mathbb{R}} % reelle
+\newcommand{\Q}{\mathbb{Q}} % rationale
+\newcommand{\Z}{\mathbb{Z}} % ganze
+\newcommand{\N}{\mathbb{N}} % natuerliche
+
+
+
+\begin{document}
+  % Keine Seitenzahlen im Vorspann
+  \pagestyle{empty}
+
+  % Titelblatt der Arbeit
+  \begin{titlepage}
+
+    \includegraphics[scale=0.45]{kit-logo.jpg}
+    \vspace*{2cm} 
+
+ \begin{center} \large 
+    
+    Bachelorarbeit
+    \vspace*{2cm}
+
+    {\huge Titel der Bachelorarbeit}
+    \vspace*{2.5cm}
+
+    Name des Autors
+    \vspace*{1.5cm}
+
+    Datum der Abgabe
+    \vspace*{4.5cm}
+
+
+    Betreuung: Name der Betreuerin / des Betreuers \\[1cm]
+    Fakult\"at für Mathematik \\[1cm]
+		Karlsruher Institut für Technologie
+  \end{center}
+\end{titlepage}
+
+
+  % Inhaltsverzeichnis
+  \tableofcontents
+
+\newpage
+
+  % Ab sofort Seitenzahlen in der Kopfzeile anzeigen
+  \pagestyle{headings}
+
+\section{Einleitung}
+
+\subsection{Grundlegendes}
+
+
+
+Dies ist eine erste kurze Einführung in das Textsatzsystem \LaTeX. 
+Die Ursprungsversion \TeX\ wurde von dem Mathematiker Donald Knuth definiert.
+Von Leslie Lamport stammt die Erweiterung auf \LaTeX\ mit einigen komfortablen Hilfen, z.B. für Referenzen und Stichwortverzeichnisse. Seither ist das System in der mathematischen Textverarbeitung 'state of the art'.
+
+\LaTeX\ ist ein Textverarbeitungssystem, bei dem man die fertige Seite nicht direkt angezeigt bekommt. Man erstellt erst einmal Seiten mit dem gewünschten Text und Formatierungsbefehlen in einer Textdatei. Diese Datei muss dann übersetzt werden. Das Ergebnis ist dann das eigentliche Dokument. Dieses kann in verschiedenen Formaten (dvi, PostScript, pdf) ausgegeben und dann gedruckt werden. 
+
+Nach dieser Vorbemerkung sollte es klar sein, dass ein \LaTeX-System mehr umfasst als nur eine ausführbare Datei. Neben dem eigentlichen Übersetungsprogramm werden Schriften und Betrachtungsprogramme für die verschiedenen Ausgangsformate mitgeliefert. Die Installationen unterscheiden sich auch darin, unter welchem Betriebssystem das \LaTeX-System installiert werden soll. Hier sollen nur zwei Systeme kurz genannt werden.
+
+\subsection{Installation unter Linux}
+
+Bei den meisten Installationen von Linux ist in der Regel bereits einen \LaTeX\-Version dabei. Es handelt sich dabei meist um teTeX oder TeXlive. Als Kommandooberfläche gehört kile zu den konfortableren Programmen.
+
+
+\subsection{Installation unter Windows} 
+
+Unter http://www.tug.org/protext/ findet man die sogenannte proTeXt-Distribution, die zur Zeit wohl die konfortabelste Möglichkeit bietet, ein komplettes \LaTeX-System zu installieren. Diese gibt es als selbstextrahierende ausführbare Datei oder als iso-image, um es auf DVD zu brennen. Letzteres hatte allerdings im Jahr 2011 noch einen Fehler, sodass die Installation nicht vollständig durchgeführt wurde; die ausführbare Datei war dagegen in Ordnung.
+
+Üblicherweise benutzt man für \LaTeX\ einen Editor, der auch die eigentlichen Kommandos wie Übersetzen der Datei und Anschauen des Ergebnisses übernimmt. Hier hat sich in den letzten Jahren das TeXnicCenter als konfortables Tool entwickelt. Sollte es nicht schon direkt bei der proTEXt-Distribution dabei sein, kann es unter\\ http://www.texniccenter.org/ heruntergeladen werden.
+ 
+\subsection{Hilfe und weitere Informationen}
+
+Bei der Eingabe des Begriffs Latex in eine Suchmaschine werden Sie auf die gängigen Seiten verwiesen. Dazu gehört bei der Installation unter Windows etwa die Überblicksseite
+
+\centerline{de.wikibooks.org/wiki/LaTeX-Kompendium:\_Schnellkurs:\_Die\_Installation\_unter\_Windows}
+
+Viele Dinge rund um \LaTeX\ findet man bei der Deutschsprachigen Anwendervereinigung TeX e.V. unter deren Homepage
+
+\centerline{www.dante.de/}
+
+Einen schnellen Überblick für das Arbeiten mit \LaTeX\ findet man auf wikibooks
+
+\centerline{en.wikibooks.org/wiki/LaTeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \newpage  % neuer Abschnitt auf neue Seite, kann auch entfallen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Generelles zu \LaTeX}
+\label{sec:Generelles}
+
+Ein \LaTeX-Dokument hat immer den gleichen Aufbau. Zuerst muss das Dokument wissen, welche Art von Dokument erstellt werden soll. Dann kommen allgemeine Befehle für das Layout sowie die länderspezifischen Einstellungen.
+
+\subsection{Der obligatorsche Rumpf}
+\label{sec:DerObligatorscheRumpf}
+
+Zwischen Dem Beginn des Dokuments und dem Ende wird der eigentliche Dokument-Text mit Hilfe entsprechender \LaTeX-Befehle gesetzt. Vorneweg (im Vorspann, vor \\ 
+\verb|\begin{document}| können Paket geladen, länderspezifische Einstellungen gemacht und Zusatzvereinbarungen, wie z.B. Seitenlayout getroffen werden.
+
+% in der verbatim-Umgebung wird alles wie geschrieben übernommen
+% LaTeX-Befehle werden dort nicht als solche gedeutet.
+\begin{verbatim} 
+
+\documentclass[a4paper]{article}
+\begin{document}
+
+\end{document}
+\end{verbatim}
+
+\subsection{Länderspezifische Einstellungen}
+\label{sec:LaenderspezifischeEinstellungen}
+
+Für deutsche Dokumente schlagen wir Folgendes vor. Der zugehörige Kommentar folgt direkt durch ein Prozentzeichen  in der entsprechenden Befehlszeile.
+
+\begin{verbatim}
+\usepackage[latin1]{inputenc} % deutsche Tastatur
+\usepackage[T1]{fontenc}      % Umlaute zulassen
+\usepackage[ngerman]{babel}   % neue deutsche Rechtschreibung 
+\end{verbatim}
+
+\subsection{Weitere Pakete}
+\label{sec:WeiterePakete}
+
+\subsection{Eigene Wünsche}
+\label{sec:EigeneWuensche}
+
+\LaTeX hat Standardeinstellungen, die Zeilenbreite, Seitenhöhe etc. festlegen. Diese können in der Präambel umdefiniert werden. Hierzu ein Beispiel:
+
+\begin{verbatim}
+\setlength{\parindent}{0mm}  % kein Einrücken der ersten Zeile eines Absatzes
+\setlength{\parskip}{1ex}    % Endeabstand in der Höhe eines "x"
+\setlength{\textwidth}{15cm} % Breite des Textes
+\setlength{\hoffset}{-15mm}  % Verschieben nach links
+\end{verbatim}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \newpage  % neuer Abschnitt auf neue Seite, kann auch entfallen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Textverarbeitung}
+\label{sec:Textverarbeitung}
+
+\subsection{Neue Zeilen und Absätze, Abstände}
+Neue Absätze im Ausgabedokument werden durch eine Leerzeile erzeugt.
+
+Hier beginnt ein neuer Absatz. Zeilenumbrüche (ohne Leerzeile) im \LaTeX-Dokument wirken nicht als solche. 
+Ein Leerzeichen wirkt im Ausgabedokument wie beliebig viele Leerzeichen.\\
+Hier beginnt eine neue Zeile. Einen Zeilenumbruch kann man mit  \verb|\\|  oder mit \verb|\newline|  erzwingen. 
+
+Horizontale Abstände kann man durch \verb|\hspace| erzeugen: 
+\hspace{10mm}
+Nun haben wir 10 mm Abstand zwischen : und nun. 
+Andere Maße sind \verb| \;, \:, \quad, \qquad|. \verb|\!| erzeugt negativen Abstand in Mathe-Umgebungen.
+Vertikale Abstände kann man durch \verb|\vspace| erzeugen:
+
+\vspace{10mm}
+
+Nun beginnt der Absatz 10 mm weiter unten.
+
+\subsection{Textformatierungen (fett, kursiv, groß, klein, usw.)}
+
+Jetzt kommmt etwas Fließtext. Standardmäßig macht \LaTeX Blocksatz. 
+\textbf{Nun wird der Text fett.}
+\textit{Das ist kursiver Text.} 
+\textsl{Jetzt wird schräggestellt}. 
+\verb| \textbf, \textit, \textsl| wirkt jeweils auf den folgenden Bereich in geschweiften Klammern.
+
+Zur Ausrichtung werden sog. Umgebungen benötigt.
+Die Syntax für Umgebungen ist einheitlich:
+\begin{verbatim}
+\begin{umgebungsname}
+
+\end{umgebungsname}
+\end{verbatim}
+
+\begin{flushleft}
+ Linksbündiger Text.
+\end{flushleft}
+\begin{flushright}
+ Rechtsbündiger Text.
+\end{flushright}
+\begin{center}
+ Zentrierter Textbereich.
+\end{center}
+
+Die Schriftgröße ist einheitlich für das gesamte Dokument.
+Sie kann bei \verb|\documentclass| vereinbart werden.
+Soll nun im Dokument etwas kleiner bzw. größer werden, muss man an der entsprechenden Stelle die Schriftgröße umschalten, z.B. mit \verb|\large, \LARGE, \huge|, usw.: normale Schrift, \large große Schrift, \Large größere Schrift, \normalsize wieder normale Schrift. Oder man schließt den Bereich, der eine andere Schriftgröße haben soll, in geschweifte Klammern \{ \} ein: 
+{\tiny winzige Schrift}. Und wieder normale Schrift.
+
+\LaTeX\ trennt automatisch, im deutschen Dokument (meist) auch nach korrekten Regeln. Man kann Trennungen aber auch vorschreiben: Text, Text, Text, Text, Text, Text, Text, Text, Stuben\-fliegenklatsche. Mit \verb|\-| wird, wenn überhaupt, nur an den angegebenen Stellen getrennt.
+
+\subsection{Weitere Umgebungen}
+
+\subsubsection{Aufzählungen und Listen}
+Es gibt die \textbf{itemize}-Umgebung. Sie liefert eine Liste ohne Nummerierung:
+\begin{itemize}
+	\item erster Punkt
+	\item zweiter Punkt
+	\item dritter Punkt
+\end{itemize}
+Die \textbf{enumerate}-Umgebung liefert eine nummerierte Liste mit automatischer fortlaufender Nummerierung:
+\begin{enumerate}
+  \item erster Punkt
+  \item noch ein Punkt
+	\item weiterer Punkt
+	\item letzter Punkt
+\end{enumerate}
+Die Nummern kann man auch manuell setzen:
+\begin{enumerate}
+	\item[a)] zum Einen 
+	\item[b)] zum Anderen
+\end{enumerate}
+Weiterhin gibt es die \textbf{description}-Umgebung
+\begin{description}
+	\item[Hund]Säugetier, weitere Säugetiere sind Katze, Maus, Ratte, Affe, Mensch, Elefant, Tiger, Wal, Löwe, Giraffe, Antilope, \dots. Nicht zu vergessen ist das Schnabeltier als Eier legendes Säugetier.
+	\item[Honigbiene] Insekt, weitere Insekten sind Stechmücke, Hummel, Wespe, Marienkäfer, Stubenfliege, Fruchtfliege 
+\end{description}
+
+\subsubsection{Tabellen}
+
+Tabellen erzeugt man mit der \textbf{tabular}-Umgebung. Spalten werden durch Kaufmannsund getrennt \&. Die Anzahl der Spalten und ihre Ausrichtung muss angegeben werden, z.B. clr für drei Spalten, wobei die erste zentriert, die zweite linksbündig und die dritte rechtsbündig ist.
+Eine neue Zeile erzeugt man wieder durch Doppelbackslash.
+Linien sind auch möglich.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Erste Spalte }                 & Zweite Spalte \\ \hline
+zweite Zeile in erster Spalte & zweite Zeile in zweiter  Spalte \\
+\hline
+\end{tabular}
+\end{center}
+
+Weitere Umgebungen sind 
+\begin{description}
+\item[tabbing] für Tabulatoren
+\item[figure] für Bilder
+\item[table] für Tafel
+\item[minipage]
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \newpage  % neuer Abschnitt auf neue Seite, kann auch entfallen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Mathematik}
+\label{sec:Mathematik}
+
+Mathematik wird in \LaTeX\ in einer eigenen Mathematikumgebung geschrieben. Es muss nur unterschieden werden, ob die Formeln direkt im fortlaufenden Text stehen oder abgesetzt werden. Wir stellen kurz die zugehörigen Umgebungen vor und gehen dann auf die wichtigsten Formatierungsmöglichkeiten ein. Beim TeXnicCenter wird man hierzu unter Einfügen -> Formeln fündig.
+
+
+\subsection{Mathematik im fortlaufenden Text}
+
+Der Satz des Pythagoras wird üblicherweise mit der Formel 
+\begin{math} a^2 + b^2 = c^2 \end{math} zitiert. Der Quelltext dazu lautet
+
+\begin{verbatim}
+Der Satz des Pythagoras wird üblicherweise mit der Formel 
+\begin{math} a^2 + b^2 = c^2 \end{math} zitiert.
+\end{verbatim}
+
+Berühmt ist auch die Formel des kleinen Gauß : \begin{math}
+	1 + 2+ \cdots + 100 =  \sum_{i=1}^{100} i = 5050
+\end{math}
+
+Alternativ zu der Umgbung \begin{verbatim} \begin{math} \end{math} \end{verbatim} kann die Klammerung auch durch Dollarzeichen erfolgen \begin{verbatim} $   $\end{verbatim}.
+
+\subsection{Abgesetzte Formeln und Satzumgebung}
+
+\begin{Satz} Nach Gauß gilt
+	\[ 1 + 2+ \cdots + 100 =  \sum_{i=1}^{100} i = 5050
+\]
+\end{Satz}
+
+Alternativ zu der Umgbung \begin{verbatim} \[ \] \end{verbatim} kann die Klammerung auch durch \begin{verbatim} \begin{displaymath}  \end{displaymath}\end{verbatim} erfolgen. Ganz schnell geht es mit doppelten Dollarzeichen \begin{verbatim} $$   $$ \end{verbatim}.
+
+\begin{Lemma} Es gilt die Identität:
+$$ 
+\cos^2(\varphi) + \sin^2(\varphi) = 1
+$$
+\end{Lemma}
+
+
+
+
+Gleichungsketten mit und ohne Nummerierung
+
+\begin{align}
+c^2 & =  a^2 + b^2\\
+    & =  3^2 + 4^2\nonumber\\
+    & =  25
+\label{eq:}
+\end{align}
+
+Der Satz des Pythagoras folgt aus dem Kathetensatz:
+
+\begin{proof}
+Es ist $a^2 = p\cdot c$  und $b^2 = q \cdot c$. Daraus folgt
+$$ a^2 +b^2 = p\cdot c + q \cdot c = \underbrace{(p+q)}_{=c}\cdot c = c^2$$
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \newpage  % neuer Abschnitt auf neue Seite, kann auch entfallen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Grafik}
+
+\subsection{Vorbedingungen}
+Benötigt wird das Paket graphicx, das im Vorspann mit \begin{verbatim}\usepackage{graphicx} \end{verbatim} geladen wird. Mit dem Befehl \begin{verbatim}\includegraphics \end{verbatim} wird dann die Graphik innerhalb einer figure-Umgebung geladen.
+
+\subsection{jpg-Dateien}
+
+Mit dem Befehl \begin{verbatim} \includegraphics{Dateiname.jpg} \end{verbatim} wird die Datei eingeladen. Gerade bei jpg-Dateien ist eventuell noch nötig, die Größe der Datei in einer sogenannten Bounding Box anzugeben. Die Erweiterung hat dann die Form
+\begin{verbatim}\includegraphics[bb=lux luy rox roy, scale=0.3]{Dateiname.jpg}\end{verbatim}
+
+Dabei steht lux und luy für die x- und y-Koordinaten der linken unteren Ecke. Entsprechendes gilt für die Koordinaten der rechten oberen Ecke rox und roy. Ein Beispiel hierfür ist das Logo des KIT
+\begin{figure}[h]
+	\centering
+	  \includegraphics[scale=0.5]{kit-logo.jpg}
+	  \caption{Das Logo des KIT}
+\end{figure}
+
+\subsection{Ein anderes Format}
+
+Neben jpg-Dateien wird durch graphicx auch das encapsulated postscript format (eps) unterstützt.Allerdings ist hierbei zu beachten, dass hier das eigentliche tex-Dokument nicht direkt durch pdflatex nach pdf übersetzt werden kann. Es muss hier der Umweg über das Postscript-Format ps gewählt werden. Die Empfehlung sollte sein, alle Graphikdateien in ein gemeinsames Format zu konvertieren. Dies erspart lästige Effekte beim Einbinden von Grafiken.
+
+
+
+ 
+
+\newpage  
+
+\begin{thebibliography}{Lam00}
+  % Literaturbeispiel: Buch
+  \bibitem[Knu85]{Knuth:1985} Donald E.~Knuth: \textit{The
+    TeXbook}. Addison-Wesley, Reading, Mass., 1985. 
+  % Literaturbeispiel: Paper
+  \bibitem[Lam00]{Lamport:2000} Leslie Lamport: \textit{How (La)TeX
+    changed the face of Mathematics}. Mitteilungen der Deutschen
+    Mathematiker-Vereinigung, 1/2000, S.~49-51, 2000.
+\end{thebibliography}
+ 
+      
+  % ggf. hier Tabelle mit Symbolen 
+  % (kann auch auf das Inhaltsverzeichnis folgen)
+
+\newpage
+  
+ \thispagestyle{empty}
+
+
+\vspace*{8cm}
+
+
+
+
+\section*{Erkl\"arung}
+
+Ich  versichere  wahrheitsgem\"a\ss,  die  Arbeit selbstst\"andig verfasst,  alle  benutzten  Hilfsmittel  vollst\"andig  und  genau  angegeben  und  alles kenntlich  gemacht  zu  haben,  was  aus  Arbeiten  anderer  unver\"andert  oder  mit  Ab\"anderungen entnommen  wurde,  sowie die Satzung  des  KIT  zur  Sicherung guter wissenschaftlicher Praxis in der jeweils g\"ultigen Fassung beachtet zu haben.
+\\[2ex] 
+
+\noindent
+Ort, den Datum\\[5ex]
+
+% Unterschrift (handgeschrieben)
+
+
+
+\end{document}
+
